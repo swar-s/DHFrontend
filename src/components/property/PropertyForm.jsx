@@ -62,24 +62,19 @@ function PropertyForm() {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    
-    if (type === 'checkbox') {
-      setProperty(prev => ({
-        ...prev,
-        [name]: checked
-      }));
-    } else if (name === 'bhk' || name === 'price' || name === 'size') {
-      setProperty(prev => ({
-        ...prev,
-        [name]: type === 'number' ? Number(value) : value
-      }));
-    } else {
-      setProperty(prev => ({
-        ...prev,
-        [name]: value
-      }));
-    }
+  
+    setProperty(prev => ({
+      ...prev,
+      [name]: type === 'checkbox'
+        ? checked
+        : (name === 'bhk' || name === 'price' || name === 'size')
+          ? Number(value)
+          : (name === 'city')
+            ? value.toLowerCase()
+            : value
+    }));
   };
+  
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
