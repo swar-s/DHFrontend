@@ -22,11 +22,35 @@ function Register() {
   const { login } = useAuth();
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+  
+    if (name === "mobile") {
+      if (!/^\d{0,10}$/.test(value)) return; // Only allow up to 10 digits
+    }
+  
+    if (name === "password" || name === "confirmPassword") {
+      if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{0,16}$/.test(value)) {
+        toast.error("Password must be 8-16 characters and alphanumeric.");
+        return;
+      }
+    }
+  
+    if (name === "dob") {
+      const today = new Date();
+      const dobDate = new Date(value);
+      const age = today.getFullYear() - dobDate.getFullYear();
+      if (age < 18) {
+        toast.error("You must be at least 18 years old to register.");
+        return;
+      }
+    }
+  
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();

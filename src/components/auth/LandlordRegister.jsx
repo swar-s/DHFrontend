@@ -18,6 +18,17 @@ function LandlordRegister() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
+    if (name === "mob") {
+      if (!/^\d{0,10}$/.test(value)) return; // Only allow up to 10 digits
+    }
+  
+    if (name === "password" || name === "confirmPassword") {
+      if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{0,16}$/.test(value)) {
+        toast.error("Password must be 8-16 characters and alphanumeric.");
+        return;
+      }
+    }
     setFormData(prev => ({
       ...prev,
       [name]: value
