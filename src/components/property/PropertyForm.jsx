@@ -70,10 +70,11 @@ function PropertyForm() {
         : (name === 'bhk' || name === 'price' || name === 'size')
           ? Number(value)
           : (name === 'city')
-            ? value.toLowerCase()
+            ? value.charAt(0).toUpperCase() + value.slice(1).toLowerCase()
             : value
     }));
   };
+  
   
 
   const handleFileChange = (e) => {
