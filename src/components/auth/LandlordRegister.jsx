@@ -1,0 +1,209 @@
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import axios from 'axios';
+
+function LandlordRegister() {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    mob: '',
+    password: '',
+    confirmPassword: '',
+    adhar: '',
+    pan: '',
+    location: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (formData.password !== formData.confirmPassword) {
+      toast.error('Passwords do not match');
+      return;
+    }
+    
+    try {
+      const response = await axios.post('https://desihatti-production.up.railway.app/api/landlords/register', {
+        name: formData.name,
+        email: formData.email,
+        mob: formData.mob,
+        password: formData.password,
+        adhar: formData.adhar,
+        pan: formData.pan,
+        location: formData.location
+      });
+      
+      toast.success('Registration successful! Please login.');
+      navigate('/login');
+    } catch (error) {
+      if (error.response && error.response.status === 409) {
+        toast.error('Email already exists. Please use a different email.');
+      } else {
+        console.error('Registration error:', error);
+        toast.error('Registration failed. Please try again.');
+      }
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full bg-white rounded-lg shadow-md p-8">
+        <h2 className="text-center text-3xl font-bold text-gray-900 mb-6">
+          Register as a Landlord
+        </h2>
+        
+        <form className="space-y-6" onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+              Full Name
+            </label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              required
+              value={formData.name}
+              onChange={handleChange}
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#B22222] focus:border-[#B22222]"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              Email Address
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              value={formData.email}
+              onChange={handleChange}
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#B22222] focus:border-[#B22222]"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="mob" className="block text-sm font-medium text-gray-700">
+              Mobile Number
+            </label>
+            <input
+              id="mob"
+              name="mob"
+              type="tel"
+              required
+              value={formData.mob}
+              onChange={handleChange}
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#B22222] focus:border-[#B22222]"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+              Password
+            </label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              required
+              value={formData.password}
+              onChange={handleChange}
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#B22222] focus:border-[#B22222]"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
+              Confirm Password
+            </label>
+            <input
+              id="confirmPassword"
+              name="confirmPassword"
+              type="password"
+              required
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#B22222] focus:border-[#B22222]"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="adhar" className="block text-sm font-medium text-gray-700">
+              Aadhar Number
+            </label>
+            <input
+              id="adhar"
+              name="adhar"
+              type="text"
+              required
+              value={formData.adhar}
+              onChange={handleChange}
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#B22222] focus:border-[#B22222]"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="pan" className="block text-sm font-medium text-gray-700">
+              PAN Number
+            </label>
+            <input
+              id="pan"
+              name="pan"
+              type="text"
+              required
+              value={formData.pan}
+              onChange={handleChange}
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#B22222] focus:border-[#B22222]"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="location" className="block text-sm font-medium text-gray-700">
+              Location
+            </label>
+            <input
+              id="location"
+              name="location"
+              type="text"
+              required
+              value={formData.location}
+              onChange={handleChange}
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#B22222] focus:border-[#B22222]"
+            />
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#B22222] hover:bg-[#8B1A1A] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#B22222]"
+            >
+              Register
+            </button>
+          </div>
+        </form>
+        
+        <div className="mt-6 text-center">
+          <p className="text-sm text-gray-600">
+            Already have an account?{' '}
+            <Link to="/login" className="font-medium text-[#B22222] hover:text-[#8B1A1A]">
+              Log In
+            </Link>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default LandlordRegister; 

@@ -1,0 +1,298 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Add some global animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+/* Enhanced focus styles */
+*:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Better button hover states */
+button, a {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Card hover effects */
+.property-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.property-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Add these custom colors */
+:root {
+  --primary: #2C3E50;      /* Deep Blue-Gray */
+  --primary-dark: #1a252f;  /* Darker shade */
+  --primary-light: #34495E; /* Lighter shade */
+  --accent: #3498DB;       /* Bright Blue */
+  --accent-light: #5DADE2; /* Light Blue */
+  --success: #2ECC71;      /* Green */
+  --warning: #F1C40F;      /* Yellow */
+  --danger: #E74C3C;       /* Red */
+  --background: #F8FAFC;   /* Light Gray-Blue */
+  --surface: #FFFFFF;      /* White */
+  --text: #2C3E50;        /* Dark Blue-Gray */
+  --text-light: #7F8C8D;  /* Medium Gray */
+  --border: #E2E8F0;      /* Light Gray */
+}
+
+/* Base styles */
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Layout adjustments for fixed navbar */
+.main-content {
+  padding-top: 5rem;
+}
+
+/* Professional Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Professional Components */
+.pro-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.pro-section {
+  @apply py-12;
+}
+
+.pro-card {
+  @apply bg-white rounded-lg border border-[--border] shadow-sm transition-all duration-200;
+}
+
+.pro-card:hover {
+  @apply shadow-md;
+}
+
+.pro-button {
+  @apply px-4 py-2 rounded-md font-medium transition-all duration-200;
+}
+
+.pro-button-primary {
+  @apply bg-[--primary] text-white hover:bg-[--primary-dark];
+}
+
+.pro-button-accent {
+  @apply bg-[--accent] text-white hover:bg-[--accent-light];
+}
+
+.pro-button-outline {
+  @apply border border-[--border] text-[--primary] hover:bg-[--background];
+}
+
+.pro-input {
+  @apply w-full px-4 py-2 rounded-md border border-[--border] 
+  focus:outline-none focus:ring-2 focus:ring-[--accent] focus:border-transparent
+  transition-all duration-200;
+}
+
+.pro-label {
+  @apply block text-sm font-medium text-[--text] mb-2;
+}
+
+.pro-select {
+  @apply pro-input appearance-none bg-white;
+}
+
+.pro-checkbox {
+  @apply h-4 w-4 rounded border-[--border] text-[--accent] 
+  focus:ring-[--accent] focus:ring-offset-0;
+}
+
+/* Grid Layouts */
+.pro-grid {
+  @apply grid gap-6;
+}
+
+.pro-grid-2 {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+}
+
+.pro-grid-3 {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.pro-grid-4 {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6;
+}
+
+/* Professional Animations */
+.pro-transition {
+  @apply transition-all duration-200;
+}
+
+.pro-hover-lift {
+  @apply transition-all duration-200 hover:-translate-y-1 hover:shadow-md;
+}
+
+/* Professional Form Styles */
+.pro-form {
+  @apply space-y-6;
+}
+
+.pro-form-group {
+  @apply space-y-2;
+}
+
+/* Professional Table Styles */
+.pro-table {
+  @apply min-w-full divide-y divide-[--border];
+}
+
+.pro-table th {
+  @apply px-6 py-3 text-left text-xs font-medium text-[--text-light] uppercase tracking-wider;
+}
+
+.pro-table td {
+  @apply px-6 py-4 whitespace-nowrap text-sm text-[--text];
+}
+
+/* Professional Badge Styles */
+.pro-badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.pro-badge-success {
+  @apply bg-green-100 text-green-800;
+}
+
+.pro-badge-warning {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.pro-badge-danger {
+  @apply bg-red-100 text-red-800;
+}
+
+/* Professional Loading States */
+.pro-skeleton {
+  @apply animate-pulse bg-[--border] rounded;
+}
+
+/* Professional Tooltips */
+.pro-tooltip {
+  @apply relative inline-block;
+}
+
+.pro-tooltip-text {
+  @apply invisible absolute z-10 px-3 py-2 text-sm text-white bg-[--primary] rounded-md 
+  opacity-0 transition-opacity duration-300;
+}
+
+.pro-tooltip:hover .pro-tooltip-text {
+  @apply visible opacity-100;
+}
+
+/* Add elegant transitions */
+.elegant-transition {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Add subtle hover effect */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(44, 62, 80, 0.1);
+}
+
+/* Update existing styles */
+body {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+/* Update existing styles */
+body {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+/* Add elegant transitions */
+.elegant-transition {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Add subtle hover effect */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(44, 62, 80, 0.1);
+}
+
+/* Professional card styles */
+.pro-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(44, 62, 80, 0.05);
+  transition: all 0.2s ease;
+}
+
+.pro-card:hover {
+  box-shadow: 0 4px 8px rgba(44, 62, 80, 0.1);
+}
+
+/* Professional transitions */
+.pro-transition {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+} 
