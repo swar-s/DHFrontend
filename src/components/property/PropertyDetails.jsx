@@ -353,7 +353,7 @@ function PropertyDetails() {
             </div>
             <p className="text-lg font-semibold mt-4">Description:</p>
             <p className="text-gray-700">{property.description}</p>
-            <p className="text-lg font-semibold mt-4">Price: ₹{property.price}</p>
+            <p className="text-lg font-semibold mt-4">Price: ₹{property.price} per day</p>
             <p className="text-lg font-semibold mt-4">Location: {property.city}, {property.address}</p>
 
             <div className="mt-6">

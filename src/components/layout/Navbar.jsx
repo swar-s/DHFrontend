@@ -87,6 +87,16 @@ function Navbar() {
                           </Link>
                         )}
 
+                        {user.userType === 'admin' && (
+                          <Link
+                            to="/admin/dashboard"
+                            className="block px-4 py-2 hover:bg-gray-100 focus:outline-none"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            Approve Properties
+                          </Link>
+                        )}
+
                         <button
                           onClick={() => {
                             handleLogout();
