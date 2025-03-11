@@ -32,6 +32,9 @@ function PropertyDetails() {
   const [userHasRated, setUserHasRated] = useState(false);
   const [propertyRatings, setPropertyRatings] = useState([]);
   const [canRateProperty, setCanRateProperty] = useState(false);
+  const [checkInDate, setCheckInDate] = useState(null);
+  const [checkOutDate, setCheckOutDate] = useState(null);
+  const [isCheckingAvailability, setIsCheckingAvailability] = useState(false);
 
   const fetchPropertyDetails = async () => {
     try {
@@ -164,22 +167,61 @@ function PropertyDetails() {
     return days * property.price;
   };
 
+  const checkDateAvailability = async () => {
+    if (!bookingDates.checkIn || !bookingDates.checkOut || !property?.pid) {
+      toast.error('Please select both check-in and check-out dates');
+      return false;
+    }
+    
+    setIsLoading(true);
+    
+    try {
+      // Create a new API endpoint or use the booking API to check availability
+      const response = await axios.get(`https://desihatti-production.up.railway.app/api/bookings/check-availability`, {
+        params: {
+          propertyId: property.pid,
+          checkInDate: bookingDates.checkIn.toISOString(),
+          checkOutDate: bookingDates.checkOut.toISOString()
+        }
+      });
+      
+      if (response.data && response.data.available) {
+        return true;
+      } else {
+        toast.error('These dates are not available. Please select different dates.');
+        return false;
+      }
+    } catch (error) {
+      console.error('Error checking date availability:', error);
+      toast.error('Failed to check date availability. Please try again.');
+      return false;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const handleBookingSubmit = async (e) => {
     e.preventDefault();
+    
     if (!user) {
-      toast.info('Please login to book a property');
+      toast.error('Please log in to book this property');
       navigate('/login');
       return;
     }
-
-    console.log("User object for booking:", user);
-
-    // Check for overlapping dates
-    if (isDateRangeBooked(new Date(bookingDates.checkIn), new Date(bookingDates.checkOut))) {
-      toast.error('Selected dates are already booked. Please choose different dates.');
+    
+    if (user.userType !== 'customer') {
+      toast.error('Only customers can book properties');
       return;
     }
-
+    
+    console.log("User object for booking:", user);
+    
+    // First check if dates are available
+    const datesAvailable = await checkDateAvailability();
+    if (!datesAvailable) {
+      return;
+    }
+    
     // Prepare the booking data with explicit customer ID
     const bookingData = {
       user: {
