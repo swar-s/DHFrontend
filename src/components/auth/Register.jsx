@@ -111,72 +111,18 @@ function Register() {
       <div className="absolute inset-y-0 left-1 flex items-center pointer-events-none">
         {icon}
       </div>
-      {/* <input
+      <input
         name={name}
         type={type}
         required={required}
         value={formData[name]}
         onChange={handleChange}
+        onBlur={handleBlur}
         className="appearance-none relative block w-full pl-7 pr-2 py-2 border border-gray-300 
                  placeholder-gray-500 text-gray-900 rounded-md focus:outline-none 
                  focus:border-[#B22222] sm:text-sm transition-colors duration-200"
         placeholder={label}
-      /> */}
-
-        <input
-          name="mobile"
-          type="tel"
-          required
-          value={formData.mobile}
-          onChange={handleChange}
-          className="appearance-none relative block w-full pl-7 pr-2 py-2 border border-gray-300 
-                  placeholder-gray-500 text-gray-900 rounded-md focus:outline-none 
-                  focus:border-[#B22222] sm:text-sm transition-colors duration-200"
-          placeholder="Mobile Number"
-        />
-
-          <input
-            name="password"
-            type="password"
-            required
-            value={formData.password}
-            onChange={handleChange}
-            onBlur={handleBlur} // Triggers validation only when the user leaves the field
-            className="appearance-none relative block w-full pl-7 pr-2 py-2 border border-gray-300 
-                    placeholder-gray-500 text-gray-900 rounded-md focus:outline-none 
-                    focus:border-[#B22222] sm:text-sm transition-colors duration-200"
-            placeholder="Password"
-          />
-
-          <input
-            name="confirmPassword"
-            type="password"
-            required
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            onBlur={handleBlur} // Validates only when the user moves out of the field
-            className="appearance-none relative block w-full pl-7 pr-2 py-2 border border-gray-300 
-                    placeholder-gray-500 text-gray-900 rounded-md focus:outline-none 
-                    focus:border-[#B22222] sm:text-sm transition-colors duration-200"
-            placeholder="Confirm Password"
-          />
-
-            <input
-              name="dob"
-              type="date"
-              required
-              value={formData.dob}
-              onChange={handleChange}
-              onBlur={handleBlur} // Ensures the user is at least 18 years old
-              className="appearance-none relative block w-full pl-7 pr-2 py-2 border border-gray-300 
-                      placeholder-gray-500 text-gray-900 rounded-md focus:outline-none 
-                      focus:border-[#B22222] sm:text-sm transition-colors duration-200"
-              placeholder="Date of Birth"
-            />
-
-
-
-
+      />
     </div>
   );
 
