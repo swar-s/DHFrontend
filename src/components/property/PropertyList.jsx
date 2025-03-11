@@ -393,14 +393,14 @@ function PropertyList() {
               >
                 <FiX /> Reset All
               </motion.button>
-              <motion.button
+              {/* <motion.button
                 type="button"
                 onClick={() => handleSearch(currentPage)}
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center gap-2 bg-[#B22222] text-white px-6 py-2 rounded-lg hover:bg-[#8B1A1A] transition-colors duration-150 focus:outline-none"
               >
                 <FiFilter /> Apply Filters
-              </motion.button>
+              </motion.button> */}
             </div>
           </div>
         </motion.div>

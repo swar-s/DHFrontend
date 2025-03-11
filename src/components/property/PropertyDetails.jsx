@@ -397,10 +397,40 @@ function PropertyDetails() {
                     <span className="ml-2">Pool Facing</span>
                   </div>
                 )}
+                {property.beach && (
+                  <div className="flex items-center p-4 border rounded-lg shadow hover:bg-blue-100 transition">
+                    <FaSwimmingPool className="text-blue-600 text-2xl" />
+                    <span className="ml-2">Beach</span>
+                  </div>
+                )}
+                {property.beachFacing && (
+                  <div className="flex items-center p-4 border rounded-lg shadow hover:bg-blue-100 transition">
+                    <FaSwimmingPool className="text-blue-600 text-2xl" />
+                    <span className="ml-2">Beach Facing</span>
+                  </div>
+                )}
                 {property.garden && (
                   <div className="flex items-center p-4 border rounded-lg shadow hover:bg-green-100 transition">
                     <FaTree className="text-green-600 text-2xl" />
                     <span className="ml-2">Garden</span>
+                  </div>
+                )}
+                {property.gardenFacing && (
+                  <div className="flex items-center p-4 border rounded-lg shadow hover:bg-blue-100 transition">
+                    <FaSwimmingPool className="text-blue-600 text-2xl" />
+                    <span className="ml-2">Garden Facing</span>
+                  </div>
+                )}
+                {property.gameZone && (
+                  <div className="flex items-center p-4 border rounded-lg shadow hover:bg-blue-100 transition">
+                    <FaSwimmingPool className="text-blue-600 text-2xl" />
+                    <span className="ml-2">Game Zone</span>
+                  </div>
+                )}
+                {property.wifi && (
+                  <div className="flex items-center p-4 border rounded-lg shadow hover:bg-blue-100 transition">
+                    <FaWifi className="text-blue-600 text-2xl" />
+                    <span className="ml-2">WiFi</span>
                   </div>
                 )}
                 {property.parking && (
@@ -409,10 +439,10 @@ function PropertyDetails() {
                     <span className="ml-2">Parking</span>
                   </div>
                 )}
-                {property.wifi && (
-                  <div className="flex items-center p-4 border rounded-lg shadow hover:bg-blue-100 transition">
-                    <FaWifi className="text-blue-600 text-2xl" />
-                    <span className="ml-2">WiFi</span>
+                {property.gym && (
+                  <div className="flex items-center p-4 border rounded-lg shadow hover:bg-gray-100 transition">
+                    <FaParking className="text-gray-600 text-2xl" />
+                    <span className="ml-2">Gym</span>
                   </div>
                 )}
               </div>
