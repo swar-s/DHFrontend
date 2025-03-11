@@ -22,17 +22,19 @@ function LandlordRegister() {
     if (name === "mob") {
       if (!/^\d{0,10}$/.test(value)) return; // Only allow up to 10 digits
     }
-  
-    if (name === "password" || name === "confirmPassword") {
-      if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{0,16}$/.test(value)) {
-        toast.error("Password must be 8-16 characters and alphanumeric.");
-        return;
-      }
-    }
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
+  };
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+  
+    if (name === "password" || name === "confirmPassword") {
+      if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,16}$/.test(value)) {
+        toast.error("Password must be 8-16 characters and alphanumeric.");
+      }
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -130,6 +132,7 @@ function LandlordRegister() {
               required
               value={formData.password}
               onChange={handleChange}
+              onBlur={handleBlur}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#B22222] focus:border-[#B22222]"
             />
           </div>
