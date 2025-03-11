@@ -282,7 +282,7 @@ function CustomerDashboard() {
         {bookings.length === 0 ? (
           <div className="p-6 text-center">
             <p className="mb-4">You don't have any bookings yet.</p>
-            <Link to="/properties" className="px-4 py-2 bg-[#B22222] text-white rounded hover:bg-red-700 transition">
+            <Link to="/" className="px-4 py-2 bg-[#B22222] text-white rounded hover:bg-red-700 transition">
               Browse Properties
             </Link>
           </div>
