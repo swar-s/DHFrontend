@@ -29,6 +29,13 @@ function LandlordRegister() {
   };
   const handleBlur = (e) => {
     const { name, value } = e.target;
+
+    if (name === "email") {
+      const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+      if (!emailRegex.test(value)) {
+        toast.error("Please enter a valid email address.");
+      }
+    }
   
     if (name === "password" || name === "confirmPassword") {
       if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,16}$/.test(value)) {
