@@ -40,11 +40,11 @@ function AdminLogin() {
     }
   };
 
-  // Prefill credentials for demo
-  const fillDemoCredentials = () => {
-    setEmail('admin@test.com');
-    setPassword('1234');
-  };
+  // // Prefill credentials for demo
+  // const fillDemoCredentials = () => {
+  //   setEmail('admin@test.com');
+  //   setPassword('1234');
+  // };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
@@ -91,13 +91,13 @@ function AdminLogin() {
           </div>
 
           <div>
-            <button
+            {/* <button
               type="button"
               onClick={fillDemoCredentials}
               className="mb-4 w-full text-sm text-gray-600 hover:text-gray-900"
             >
               Use demo credentials
-            </button>
+            </button> */}
             
             <button
               type="submit"
