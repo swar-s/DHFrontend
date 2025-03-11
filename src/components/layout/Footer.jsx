@@ -37,12 +37,12 @@ function Footer() {
             <ul className="space-y-2 text-gray-400">
               <li>Email: info@desihatti.com</li>
               <li>Phone: +91 123 456 7890</li>
-              <li>Address: 123 Main Street, City, State, India</li>
+              <li>Address: Sector 48, Gurugram, Haryana, India</li>
             </ul>
           </div>
         </div>
         
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+        <div className="border-t border-gray-700 mt-4 pt-4 text-center text-gray-400">
           <p>&copy; {new Date().getFullYear()} Desi Hatti. All rights reserved.</p>
         </div>
       </div>

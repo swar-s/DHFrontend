@@ -506,9 +506,15 @@ function PropertyList() {
                           Gym
                         </span>
                       )}
-                      {property.garden && (
+                      
+                      {property.beach && (
                         <span className="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded">
-                          Garden
+                          Beach
+                        </span>
+                      )}
+                      {property.parking && (
+                        <span className="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded">
+                          Parking
                         </span>
                       )}
                     </div>

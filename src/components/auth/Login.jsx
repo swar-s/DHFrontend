@@ -171,7 +171,7 @@ function Login() {
                   Register as Customer
                 </Link>
               ) : (
-                <Link to="/landlord/register" className="font-medium text-[#B22222] hover:text-[#8B1A1A]">
+                <Link to="/register" className="font-medium text-[#B22222] hover:text-[#8B1A1A]">
                   Register as Landlord
                 </Link>
               )}
