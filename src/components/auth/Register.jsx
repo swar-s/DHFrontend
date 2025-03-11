@@ -25,7 +25,28 @@ function Register() {
     const { name, value } = e.target;
   
     if (name === "mobile") {
-      if (!/^\d{0,10}$/.test(value)) return; // Only allow up to 10 digits
+      if (!/^\d{0,10}$/.test(value)) return; // Allow only up to 10 digits
+    }
+  
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+  
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+  
+    if (name === "password") {
+      if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,16}$/.test(value)) {
+        toast.error("Password must be 8-16 characters and alphanumeric.");
+      }
+    }
+  
+    if (name === "confirmPassword") {
+      if (value !== formData.password) {
+        toast.error("Passwords do not match.");
+      }
     }
   
     if (name === "dob") {
@@ -34,15 +55,10 @@ function Register() {
       const age = today.getFullYear() - dobDate.getFullYear();
       if (age < 18) {
         toast.error("You must be at least 18 years old to register.");
-        return;
       }
     }
-  
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
   };
+  
   
 
   const handleSubmit = async (e) => {
@@ -95,7 +111,7 @@ function Register() {
       <div className="absolute inset-y-0 left-1 flex items-center pointer-events-none">
         {icon}
       </div>
-      <input
+      {/* <input
         name={name}
         type={type}
         required={required}
@@ -105,7 +121,62 @@ function Register() {
                  placeholder-gray-500 text-gray-900 rounded-md focus:outline-none 
                  focus:border-[#B22222] sm:text-sm transition-colors duration-200"
         placeholder={label}
-      />
+      /> */}
+
+        <input
+          name="mobile"
+          type="tel"
+          required
+          value={formData.mobile}
+          onChange={handleChange}
+          className="appearance-none relative block w-full pl-7 pr-2 py-2 border border-gray-300 
+                  placeholder-gray-500 text-gray-900 rounded-md focus:outline-none 
+                  focus:border-[#B22222] sm:text-sm transition-colors duration-200"
+          placeholder="Mobile Number"
+        />
+
+          <input
+            name="password"
+            type="password"
+            required
+            value={formData.password}
+            onChange={handleChange}
+            onBlur={handleBlur} // Triggers validation only when the user leaves the field
+            className="appearance-none relative block w-full pl-7 pr-2 py-2 border border-gray-300 
+                    placeholder-gray-500 text-gray-900 rounded-md focus:outline-none 
+                    focus:border-[#B22222] sm:text-sm transition-colors duration-200"
+            placeholder="Password"
+          />
+
+          <input
+            name="confirmPassword"
+            type="password"
+            required
+            value={formData.confirmPassword}
+            onChange={handleChange}
+            onBlur={handleBlur} // Validates only when the user moves out of the field
+            className="appearance-none relative block w-full pl-7 pr-2 py-2 border border-gray-300 
+                    placeholder-gray-500 text-gray-900 rounded-md focus:outline-none 
+                    focus:border-[#B22222] sm:text-sm transition-colors duration-200"
+            placeholder="Confirm Password"
+          />
+
+            <input
+              name="dob"
+              type="date"
+              required
+              value={formData.dob}
+              onChange={handleChange}
+              onBlur={handleBlur} // Ensures the user is at least 18 years old
+              className="appearance-none relative block w-full pl-7 pr-2 py-2 border border-gray-300 
+                      placeholder-gray-500 text-gray-900 rounded-md focus:outline-none 
+                      focus:border-[#B22222] sm:text-sm transition-colors duration-200"
+              placeholder="Date of Birth"
+            />
+
+
+
+
     </div>
   );
 
