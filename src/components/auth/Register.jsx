@@ -45,7 +45,7 @@ function Register() {
     }
   
     if (name === "password") {
-      if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,16}$/.test(value)) {
+      if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,16}$/.test(value)){
         toast.error("Password must be 8-16 characters and alphanumeric.");
       }
     }
