@@ -87,20 +87,20 @@ function AdminDashboard() {
     }
   };
 
-  const handleRejectProperty = async (pid) => {
-    try {
-      await axios.put(`https://desihatti-production.up.railway.app/api/admin/properties/${pid}/approve?approved=false`, null, {
-        params: { approved: false }
-      });
-      toast.success('Property rejected');
-      // Refresh the property list
-      fetchPendingProperties();
-      fetchStatistics();
-    } catch (error) {
-      console.error('Error rejecting property:', error);
-      toast.error('Failed to reject property');
-    }
-  };
+  // const handleRejectProperty = async (pid) => {
+  //   try {
+  //     await axios.put(`https://desihatti-production.up.railway.app/api/admin/properties/${pid}/approve?approved=false`, null, {
+  //       params: { approved: false }
+  //     });
+  //     toast.success('Property rejected');
+  //     // Refresh the property list
+  //     fetchPendingProperties();
+  //     fetchStatistics();
+  //   } catch (error) {
+  //     console.error('Error rejecting property:', error);
+  //     toast.error('Failed to reject property');
+  //   }
+  // };
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -234,12 +234,12 @@ function AdminDashboard() {
                         >
                           <FaCheck className="mr-1" /> Approve
                         </button>
-                        <button
+                        {/* <button
                           onClick={() => handleRejectProperty(property.pid)}
                           className="flex items-center bg-red-100 text-red-800 px-3 py-1 rounded-full hover:bg-red-200 transition-colors"
                         >
                           <FaTimes className="mr-1" /> Reject
-                        </button>
+                        </button> */}
                       </div>
                     </td>
                   </tr>
