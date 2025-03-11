@@ -69,8 +69,19 @@ function PropertyList() {
   };
 
   const handleSearchInput = (e) => {
-    setSearchQuery(e.target.value);
+    let value = e.target.value;
+ 
+    value = value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
+  
+    setSearchQuery(value);
   };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSearchClick(); // Trigger search when Enter is pressed
+    }
+  };
+  
 
   const handleSearchClick = () => {
     handleSearch(0);
@@ -237,6 +248,7 @@ function PropertyList() {
               placeholder="Search by location ..."
               value={searchQuery}
               onChange={handleSearchInput}
+              onKeyDown={handleKeyPress}
               className="w-full pl-10 pr-4 py-3 border border-[#E5E5E5] rounded-lg focus:outline-none focus:border-[#B22222] transition-all duration-150 bg-white"
             />
           </div>
