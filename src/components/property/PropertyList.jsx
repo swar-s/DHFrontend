@@ -228,7 +228,7 @@ function PropertyList() {
         className="text-center mb-8"
       >
         <h1 className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-[#B22222] to-[#D64545] bg-clip-text text-transparent">
-          Find Your Desi Vacation Place <br /> 
+          A Desi Stay Awaits You <br /> 
         </h1>
       </motion.div>
 
