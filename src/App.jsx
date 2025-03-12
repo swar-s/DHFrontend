@@ -15,6 +15,7 @@ import UserProfile from './components/profile/UserProfile';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LandlordProperties from './components/property/LandlordProperties';
+import AboutUs from './components/pages/AboutUs';
 
 // Protected Route Component
 const ProtectedRoute = ({ children, allowedRoles }) => {
@@ -44,6 +45,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/sysadmin" element={<AdminLogin />} />
+              <Route path="/about" element={<AboutUs />} />
 
               {/* Protected Customer Routes */}
               <Route 
