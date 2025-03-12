@@ -1,4 +1,5 @@
 import ChatBox from '../chat/ChatBox';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -11,9 +12,9 @@ function Footer() {
           </div>
           
           <div className="w-full md:w-auto flex flex-wrap justify-center gap-4 md:gap-8">
-            <a href="/" className="text-gray-400 hover:text-white text-sm">Home</a>
-            <a href="/about" className="text-gray-400 hover:text-white text-sm">About Us</a>
-            <a href="/" className="text-gray-400 hover:text-white text-sm">Properties</a>
+            <Link to="/" className="text-gray-400 hover:text-white text-sm">Home</Link>
+            <Link to="/about" className="text-gray-400 hover:text-white text-sm">About Us</Link>
+            <Link to="/" className="text-gray-400 hover:text-white text-sm">Properties</Link>
           </div>
         </div>
         
