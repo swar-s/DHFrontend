@@ -94,55 +94,55 @@ function AboutUs() {
               {/* Team Member 1 */}
               <div className="bg-gray-50 p-5 rounded-lg text-center">
                 <img 
-                  src="/swadoop.jpeg" 
-                  alt="Swarup Suryawanshi" 
+                  src="/mentor.jpeg" 
+                  alt="Dr. Arup Abhinna Acharya" 
                   className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-4 border-white shadow-md"
                 />
-                <h3 className="text-lg font-semibold">Swarup Suryawanshi</h3>
-                <p className="text-[#B22222] font-medium mb-2"><Highlight>Team Lead &amp; Backend</Highlight></p>
+                <h3 className="text-lg font-semibold">Dr. Arup Abhinna Acharya</h3>
+                <p className="text-[#B22222] font-medium mb-2"><Highlight>Mentor</Highlight></p>
               </div>
               
               {/* Team Member 2 */}
               <div className="bg-gray-50 p-5 rounded-lg text-center">
                 <img 
-                  src="/bossman.jpeg" 
-                  alt="Boss Man" 
+                  src="/swadoop.jpeg" 
+                  alt="Swarup Suryawanshi" 
                   className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-4 border-white shadow-md"
                 />
-                <h3 className="text-lg font-semibold">Paul Tridib</h3>
-                <p className="text-[#B22222] font-medium mb-2"><Highlight>Mentor</Highlight></p>
+                <h3 className="text-lg font-semibold">Swarup Suryawanshi</h3>
+                <p className="text-[#B22222] font-medium mb-2"><Highlight>Frontend &amp; Database</Highlight></p>
               </div>
               
               {/* Team Member 3 */}
               <div className="bg-gray-50 p-5 rounded-lg text-center">
                 <img 
                   src="/tanveer.jpeg" 
-                  alt="Tanveer Singh" 
+                  alt="Chaudhury Saumen Dash" 
                   className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-4 border-white shadow-md"
                 />
-                <h3 className="text-lg font-semibold">Tanveer Singh</h3>
-                <p className="text-[#B22222] font-medium mb-2"><Highlight>Integration &amp; Frontend</Highlight></p>
+                <h3 className="text-lg font-semibold">Chaudhury Saumen Dash</h3>
+                <p className="text-[#B22222] font-medium mb-2"><Highlight>Integration &amp; Backend</Highlight></p>
               </div>
               
               {/* Team Member 4 */}
               <div className="bg-gray-50 p-5 rounded-lg text-center">
                 <img 
                   src="/ayush.jpeg" 
-                  alt="Ayush Amulya" 
+                  alt="Payal Burmam" 
                   className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-4 border-white shadow-md"
                 />
-                <h3 className="text-lg font-semibold">Ayush Amulya</h3>
-                <p className="text-[#B22222] font-medium mb-2"><Highlight>Integration &amp; Database</Highlight></p>
+                <h3 className="text-lg font-semibold">Payal Burman</h3>
+                <p className="text-[#B22222] font-medium mb-2"><Highlight>Frontend &amp; Backend</Highlight></p>
               </div>
               
               {/* Team Member 5 */}
               <div className="bg-gray-50 p-5 rounded-lg text-center">
                 <img 
                   src="/priya.jpeg" 
-                  alt="Priya Pathak" 
+                  alt="Shibani Sarkar" 
                   className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-4 border-white shadow-md"
                 />
-                <h3 className="text-lg font-semibold">Priya Pathak</h3>
+                <h3 className="text-lg font-semibold">Shibani Sarkar</h3>
                 <p className="text-[#B22222] font-medium mb-2"><Highlight>Frontend</Highlight></p>
               </div>
               
@@ -150,17 +150,17 @@ function AboutUs() {
               <div className="bg-gray-50 p-5 rounded-lg text-center">
                 <img 
                   src="/paritosh.jpeg" 
-                  alt="Paritosh Singh" 
+                  alt="Abhijeet Kumar" 
                   className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-4 border-white shadow-md"
                 />
-                <h3 className="text-lg font-semibold">Paritosh Singh</h3>
+                <h3 className="text-lg font-semibold">Abhijeet Kumar</h3>
                 <p className="text-[#B22222] font-medium mb-2"><Highlight>Backend & Deployment</Highlight></p>
               </div>
             </div>
             
             <div className="text-center">
               <a 
-                href="mailto:satanveersingh@gmail.com" 
+                href="mailto:swarupsuryawanshi4911@gmail.com" 
                 className="inline-block bg-[#B22222] text-white px-6 py-3 rounded-md hover:bg-[#8B1A1A] transition-colors"
               >
                 Get in Touch With Us
