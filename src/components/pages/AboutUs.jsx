@@ -105,7 +105,7 @@ function AboutUs() {
               {/* Team Member 2 */}
               <div className="bg-gray-50 p-5 rounded-lg text-center">
                 <img 
-                  src="/swadoop.jpeg" 
+                  src="/Swarup.jpg" 
                   alt="Swarup Suryawanshi" 
                   className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-4 border-white shadow-md"
                 />
@@ -116,45 +116,45 @@ function AboutUs() {
               {/* Team Member 3 */}
               <div className="bg-gray-50 p-5 rounded-lg text-center">
                 <img 
-                  src="/tanveer.jpeg" 
+                  src="/Saumen.jpg" 
                   alt="Chaudhury Saumen Dash" 
                   className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-4 border-white shadow-md"
                 />
                 <h3 className="text-lg font-semibold">Chaudhury Saumen Dash</h3>
-                <p className="text-[#B22222] font-medium mb-2"><Highlight>Integration &amp; Backend</Highlight></p>
+                <p className="text-[#B22222] font-medium mb-2"><Highlight>Backend &amp; Integration</Highlight></p>
               </div>
               
               {/* Team Member 4 */}
               <div className="bg-gray-50 p-5 rounded-lg text-center">
                 <img 
-                  src="/ayush.jpeg" 
+                  src="/payal.jpg" 
                   alt="Payal Burmam" 
                   className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-4 border-white shadow-md"
                 />
                 <h3 className="text-lg font-semibold">Payal Burman</h3>
-                <p className="text-[#B22222] font-medium mb-2"><Highlight>Frontend &amp; Backend</Highlight></p>
+                <p className="text-[#B22222] font-medium mb-2"><Highlight>Frontend &amp; Deployment</Highlight></p>
               </div>
               
               {/* Team Member 5 */}
               <div className="bg-gray-50 p-5 rounded-lg text-center">
                 <img 
-                  src="/priya.jpeg" 
+                  src="/Shibani.jpg" 
                   alt="Shibani Sarkar" 
                   className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-4 border-white shadow-md"
                 />
                 <h3 className="text-lg font-semibold">Shibani Sarkar</h3>
-                <p className="text-[#B22222] font-medium mb-2"><Highlight>Frontend</Highlight></p>
+                <p className="text-[#B22222] font-medium mb-2"><Highlight>Backend</Highlight></p>
               </div>
               
               {/* Team Member 6 */}
               <div className="bg-gray-50 p-5 rounded-lg text-center">
                 <img 
-                  src="/paritosh.jpeg" 
+                  src="/abhijeet.png" 
                   alt="Abhijeet Kumar" 
                   className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-4 border-white shadow-md"
                 />
                 <h3 className="text-lg font-semibold">Abhijeet Kumar</h3>
-                <p className="text-[#B22222] font-medium mb-2"><Highlight>Backend & Deployment</Highlight></p>
+                <p className="text-[#B22222] font-medium mb-2"><Highlight>Backend</Highlight></p>
               </div>
             </div>
             
