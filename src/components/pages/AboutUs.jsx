@@ -91,30 +91,20 @@ function AboutUs() {
             
             {/* Team Members Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-              {/* Team Member 1 */}
-              {/* <div className="bg-gray-50 p-5 rounded-lg text-center">
-                <img 
-                  src="/mentor.jpeg" 
-                  alt="Dr. Arup Abhinna Acharya" 
-                  className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-4 border-white shadow-md"
-                />
-                <h3 className="text-lg font-semibold">Dr. Arup Abhinna Acharya</h3>
-                <p className="text-[#B22222] font-medium mb-2"><Highlight>Mentor</Highlight></p>
-              </div> */}
               
-              {/* Team Member 2 */}
+              {/* Team Member 1 */}
               <div className="bg-gray-50 p-5 rounded-lg text-center">
                 <img 
-                  src="/tanveer.jpeg" 
-                  alt="Tanveer" 
+                  src="/Swarup.jpg" 
+                  alt="Swarup" 
                   className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-4 border-white shadow-md"
                 />
-                <h3 className="text-lg font-semibold">Tanveer Singh</h3>
-                <p className="text-[#B22222] font-medium mb-2"><Highlight>Team Lead &amp; Frontend</Highlight></p>
+                <h3 className="text-lg font-semibold">Swarup Suryawanshi</h3>
+                <p className="text-[#B22222] font-medium mb-2"><Highlight>Team Lead &amp; Developer</Highlight></p>
               </div>
               
-              {/* Team Member 3 */}
-              <div className="bg-gray-50 p-5 rounded-lg text-center">
+              {/* Team Member 2 */}
+              {/* <div className="bg-gray-50 p-5 rounded-lg text-center">
                 <img 
                   src="/paritosh.jpeg" 
                   alt="Paritosh Kumar" 
@@ -122,39 +112,6 @@ function AboutUs() {
                 />
                 <h3 className="text-lg font-semibold">Paritosh Kumar</h3>
                 <p className="text-[#B22222] font-medium mb-2"><Highlight>Backend &amp; Integration</Highlight></p>
-              </div>
-              
-              {/* Team Member 4 */}
-              {/* <div className="bg-gray-50 p-5 rounded-lg text-center">
-                <img 
-                  src="/payal.jpg" 
-                  alt="Payal Burmam" 
-                  className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-4 border-white shadow-md"
-                />
-                <h3 className="text-lg font-semibold">Payal Burman</h3>
-                <p className="text-[#B22222] font-medium mb-2"><Highlight>Frontend &amp; Deployment</Highlight></p>
-              </div> */}
-              
-              {/* Team Member 5 */}
-              {/* <div className="bg-gray-50 p-5 rounded-lg text-center">
-                <img 
-                  src="/Shibani.jpg" 
-                  alt="Shibani Sarkar" 
-                  className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-4 border-white shadow-md"
-                />
-                <h3 className="text-lg font-semibold">Shibani Sarkar</h3>
-                <p className="text-[#B22222] font-medium mb-2"><Highlight>Backend</Highlight></p>
-              </div> */}
-              
-              {/* Team Member 6 */}
-              {/* <div className="bg-gray-50 p-5 rounded-lg text-center">
-                <img 
-                  src="/abhijeet.png" 
-                  alt="Abhijeet Kumar" 
-                  className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-4 border-white shadow-md"
-                />
-                <h3 className="text-lg font-semibold">Abhijeet Kumar</h3>
-                <p className="text-[#B22222] font-medium mb-2"><Highlight>Backend</Highlight></p>
               </div> */}
             </div>
             
